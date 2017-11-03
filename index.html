@@ -6,20 +6,22 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
+	<div id = "data">
+		<h4>You are here:</h4>
 
-	<div id="weather"></div>
-	<p><span id="temp"></span></p>
-	<p><span id="wind"></span></p>
-	
-	
-	
-	<div class="container">
-		<div class="row">
-			
-		</div>
 	</div>
+	<script>
+
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				$("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+			});
+		}
+
+	</script>
 	
 	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>
